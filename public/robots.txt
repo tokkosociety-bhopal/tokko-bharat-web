@@ -1,0 +1,25 @@
+# Tokko Bharat - News Website
+# https://tokkobharat.com
+
+User-agent: *
+Allow: /
+
+# Disallow admin pages
+Disallow: /admin/
+Disallow: /admin/news/
+Disallow: /admin/news/new/
+Disallow: /admin/news/edit/
+
+# Allow important pages
+Allow: /about
+Allow: /contact
+Allow: /privacy
+Allow: /terms
+Allow: /disclaimer
+Allow: /editorial-policy
+Allow: /category/
+Allow: /news/
+Allow: /search
+
+# Sitemap location
+Sitemap: https://tokkobharat.com/sitemap.xml
