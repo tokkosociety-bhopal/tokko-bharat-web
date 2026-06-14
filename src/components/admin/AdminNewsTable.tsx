@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import DeleteNewsButton from "@/components/admin/DeleteNewsButton";
 import { Eye, Edit, Search } from "lucide-react";
+import NewsStatusToggle from "@/components/admin/NewsStatusToggle";
 
 export default function AdminNewsTable({
   news,
@@ -98,23 +99,17 @@ export default function AdminNewsTable({
                         <Eye size={18} />
                       </Link>
 
-                      {item.isBreaking && (
-  <span
-    title="Breaking News"
-    className="text-green-600 font-bold text-lg"
-  >
-    ✔
-  </span>
-)}
+                      <NewsStatusToggle
+  newsId={item.id}
+  field="isBreaking"
+  value={item.isBreaking || false}
+/>
 
-{item.isTrending && (
-  <span
-    title="Trending News"
-    className="text-orange-500 font-bold text-lg"
-  >
-    🔥
-  </span>
-)}
+<NewsStatusToggle
+  newsId={item.id}
+  field="isTrending"
+  value={item.isTrending || false}
+/>
 
                       <Link
                         href={`/admin/news/edit/${item.id}`}
