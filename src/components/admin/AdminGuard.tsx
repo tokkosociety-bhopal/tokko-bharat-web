@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/lib/firebase";
+import { signOut } from "firebase/auth";
 
 const ALLOWED_EMAILS = [
   "tokkosociety@gmail.com",
@@ -28,8 +29,9 @@ export default function AdminGuard({
     const email = user.email || "";
 
     if (!ALLOWED_EMAILS.includes(email)) {
-      router.push("/");
-    }
+  signOut(auth);
+  router.push("/admin/login");
+}
   }, [user, loading, router]);
 
   if (loading) {
