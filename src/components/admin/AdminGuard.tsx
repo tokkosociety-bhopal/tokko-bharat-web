@@ -6,7 +6,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/lib/firebase";
 
 const ALLOWED_EMAILS = [
-  "YOUR_GMAIL@gmail.com",
+  "tokkosociety@gmail.com",
 ];
 
 export default function AdminGuard({
