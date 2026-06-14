@@ -118,23 +118,32 @@ const trendingNews = news.filter(
           </div>
 
           <aside className="space-y-8">
-            <TrendingNews news={trendingNews.slice(0, 5)} />
-            
-            <div className="bg-gradient-to-br from-red-600 to-red-700 rounded-xl p-6 text-white shadow-lg">
-              <h3 className="text-xl font-bold mb-2">Daily Newsletter</h3>
-              <p className="text-red-100 text-sm mb-4">
-                Get the best news delivered to your inbox every morning.
-              </p>
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="w-full px-4 py-2 rounded-lg text-gray-800 text-sm mb-3 outline-none"
-              />
-              <button className="w-full bg-gray-900 hover:bg-gray-800 text-white py-2 rounded-lg font-semibold text-sm transition-colors">
-                Subscribe Now
-              </button>
-            </div>
-          </aside>
+
+  <TrendingNews
+    news={trendingNews.slice(0, 5)}
+  />
+
+  <div className="bg-gradient-to-br from-red-600 to-red-700 rounded-xl p-6 text-white shadow-lg">
+    <h3 className="text-xl font-bold mb-2">
+      Daily Newsletter
+    </h3>
+
+    <p className="text-red-100 text-sm mb-4">
+      Get the best news delivered to your inbox every morning.
+    </p>
+
+    <input
+      type="email"
+      placeholder="Your email address"
+      className="w-full px-4 py-2 rounded-lg text-gray-800 text-sm mb-3 outline-none"
+    />
+
+    <button className="w-full bg-gray-900 hover:bg-gray-800 text-white py-2 rounded-lg font-semibold text-sm transition-colors">
+      Subscribe Now
+    </button>
+  </div>
+
+</aside>
         </div>
       </section>
 
