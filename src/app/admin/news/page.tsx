@@ -12,6 +12,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Plus, Edit, Trash2, Eye } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminNewsPage() {
   const q = query(collection(db, "news"), orderBy("createdAt", "desc"));
   const snapshot = await getDocs(q);
