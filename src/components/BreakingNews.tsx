@@ -25,15 +25,7 @@ export default function BreakingNews({
         <div className="overflow-hidden relative flex-1">
           <div className="flex gap-12 animate-scroll-left whitespace-nowrap text-gray-700 font-medium text-sm">
 
-            {news.map((item) => (
-              <Link
-                key={item.id}
-                href={`/news/${item.slug}`}
-                className="hover:text-red-600"
-              >
-                🚨 {item.titleEn}
-              </Link>
-            ))}
+            
 
             {news.map((item) => (
               <Link
