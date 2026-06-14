@@ -75,12 +75,18 @@ export default function AdminNewsTable({
                   </td>
 
                   <td className="p-4">
-                    {item.createdAt?.toDate
-                      ? new Date(
-                          item.createdAt.toDate()
-                        ).toLocaleDateString()
-                      : "N/A"}
-                  </td>
+  {item.createdAt
+    ? new Date(
+        item.createdAt?.seconds
+          ? item.createdAt.seconds * 1000
+          : item.createdAt
+      ).toLocaleDateString("en-US", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      })
+    : "No Date"}
+</td>
 
                   <td className="p-4">
                     <div className="flex gap-2">
