@@ -9,6 +9,7 @@ import { ArrowLeft, Clock, Calendar, User, Share2, Tag } from "lucide-react";
 import Link from "next/link";
 import ShareButtons from "@/components/ShareButtons";
 import { Metadata } from "next";
+import NewsViewCounter from "@/components/NewsViewCounter";
 
 type NewsType = {
   id: string;
@@ -137,6 +138,7 @@ export default async function NewsDetailPage({
       <Header />
 
       <article className="max-w-4xl mx-auto px-4 py-10">
+        <NewsViewCounter newsId={news.id} />
         {/* Breadcrumb */}
         <div className="mb-6">
           <Link href="/" className="text-sm text-gray-600 hover:text-red-600 transition-colors">

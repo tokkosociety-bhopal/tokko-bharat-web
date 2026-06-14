@@ -50,6 +50,7 @@ export default function AdminNewsTable({
                 <th className="text-left p-4">Title</th>
                 <th className="text-left p-4">Category</th>
                 <th className="text-left p-4">Author</th>
+                <th className="text-left p-4">Views</th>
                 <th className="text-left p-4">Published</th>
                 <th className="text-left p-4">Actions</th>
               </tr>
@@ -72,10 +73,14 @@ export default function AdminNewsTable({
                   </td>
 
                   <td className="p-4">
-                    {item.author || "Tokko Bharat Desk"}
-                  </td>
+  {item.author || "Tokko Bharat Desk"}
+</td>
 
-                  <td className="p-4">
+<td className="p-4">
+  {item.views || 0}
+</td>
+
+<td className="p-4">
   {item.createdAt
     ? new Date(
         item.createdAt?.seconds

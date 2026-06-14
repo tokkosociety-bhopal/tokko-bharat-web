@@ -91,6 +91,27 @@ export default async function AdminNewsPage() {
           </div>
         </div>
 
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+  <div className="flex items-center justify-between">
+    <div>
+      <p className="text-sm text-gray-600 font-medium">
+        Total Views
+      </p>
+
+      <p className="text-3xl font-bold text-gray-900 mt-1">
+        {news.reduce(
+          (sum, item) => sum + (item.views || 0),
+          0
+        )}
+      </p>
+    </div>
+
+    <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+      <Eye className="text-orange-600" size={24} />
+    </div>
+  </div>
+</div>
+
         <AdminNewsTable news={news} />
       </div>
 
