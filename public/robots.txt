@@ -22,4 +22,4 @@ Allow: /news/
 Allow: /search
 
 # Sitemap location
-Sitemap: https://tokkobharat.com/sitemap.xml
+Sitemap: https://tokko-bharat-web.vercel.app/sitemap.xml
