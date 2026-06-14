@@ -6,11 +6,32 @@ export const metadata: Metadata = {
     default: "Tokko Bharat | Latest Hindi & English News",
     template: "%s | Tokko Bharat",
   },
-  description: "Get the latest breaking news, top headlines, and in-depth analysis from India and around the world. Your trusted source for Hindi and English news.",
-  keywords: ["News", "India News", "Hindi News", "English News", "Breaking News", "Tokko Bharat", "Latest Headlines", "Technology", "Sports", "Business"],
-  authors: [{ name: "Tokko Bharat News Desk" }],
+
+  description:
+    "Get the latest breaking news, top headlines, and in-depth analysis from India and around the world. Your trusted source for Hindi and English news.",
+
+  keywords: [
+    "News",
+    "India News",
+    "Hindi News",
+    "English News",
+    "Breaking News",
+    "Tokko Bharat",
+    "Latest Headlines",
+    "Technology",
+    "Sports",
+    "Business",
+  ],
+
+  authors: [
+    {
+      name: "Tokko Bharat News Desk",
+    },
+  ],
+
   creator: "Tokko Bharat",
   publisher: "Tokko Bharat",
+
   robots: {
     index: true,
     follow: true,
@@ -19,16 +40,19 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
+
   verification: {
     google: "1kifP9Xh3gVGN98f66Qr4ZuyNppN5thoJJObMPIgeZk",
   },
+
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://tokkobharat.com",
+    url: "https://tokko-bharat-web.vercel.app",
     siteName: "Tokko Bharat",
     title: "Tokko Bharat | Latest Hindi & English News",
-    description: "Get the latest breaking news, top headlines, and in-depth analysis from India and around the world.",
+    description:
+      "Get the latest breaking news, top headlines, and in-depth analysis from India and around the world.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1200&auto=format&fit=crop",
@@ -38,11 +62,15 @@ export const metadata: Metadata = {
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Tokko Bharat | Latest Hindi & English News",
-    description: "Get the latest breaking news, top headlines, and in-depth analysis.",
-    images: ["https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1200&auto=format&fit=crop"],
+    description:
+      "Get the latest breaking news, top headlines, and in-depth analysis.",
+    images: [
+      "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1200&auto=format&fit=crop",
+    ],
   },
 };
 

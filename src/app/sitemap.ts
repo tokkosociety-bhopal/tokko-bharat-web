@@ -3,7 +3,7 @@ import { collection, getDocs } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://tokkobharat.com';
+  const baseUrl = 'https://tokko-bharat-web.vercel.app';
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
