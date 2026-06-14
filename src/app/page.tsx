@@ -34,6 +34,8 @@ export default async function HomePage() {
   (item) => item.isBreaking === true
 );
 
+console.log("BREAKING NEWS COUNT:", breakingNews.length);
+
 const trendingNews = news.filter(
   (item) => item.isTrending === true
 );
@@ -48,7 +50,7 @@ const trendingNews = news.filter(
   return (
     <main className="min-h-screen bg-gray-50">
       <Header />
-      <BreakingNews news={breakingNews} />
+      <BreakingNews news={news.slice(0, 3)} />
 
       {heroNews && <HeroNews heroNews={heroNews} topHeadlines={topHeadlines} />}
 
