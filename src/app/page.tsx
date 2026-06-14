@@ -52,7 +52,12 @@ const trendingNews = news.filter(
       <Header />
       <BreakingNews news={breakingNews} />
 
-      {heroNews && <HeroNews heroNews={heroNews} topHeadlines={topHeadlines} />}
+      {heroNews && (
+  <HeroNews
+    heroNews={heroNews}
+    topHeadlines={trendingNews.slice(0, 5)}
+  />
+)}
 
       {categories.map((category) => {
         if (newsByCategory[category].length === 0) return null;
