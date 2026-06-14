@@ -54,9 +54,9 @@ const trendingNews = news.filter(
 
       {heroNews && (
   <HeroNews
-    heroNews={heroNews}
-    topHeadlines={trendingNews.slice(0, 5)}
-  />
+  heroNews={heroNews}
+  topHeadlines={trendingNews.slice(0, 5)}
+/>
 )}
 
       {categories.map((category) => {
