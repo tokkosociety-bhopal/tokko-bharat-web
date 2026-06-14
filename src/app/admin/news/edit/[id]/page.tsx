@@ -18,15 +18,17 @@ export default function EditNewsPage() {
   const [fetching, setFetching] = useState(true);
 
   const [form, setForm] = useState({
-    titleEn: "",
-    titleHi: "",
-    summaryEn: "",
-    summaryHi: "",
-    contentEn: "",
-    contentHi: "",
-    imageUrl: "",
-    category: "india",
-  });
+  titleEn: "",
+  titleHi: "",
+  summaryEn: "",
+  summaryHi: "",
+  contentEn: "",
+  contentHi: "",
+  imageUrl: "",
+  category: "india",
+  isBreaking: false,
+  isTrending: false,
+});
 
   useEffect(() => {
     async function fetchNews() {
@@ -38,15 +40,17 @@ export default function EditNewsPage() {
         if (docSnap.exists()) {
           const data = docSnap.data();
           setForm({
-            titleEn: data.titleEn || "",
-            titleHi: data.titleHi || "",
-            summaryEn: data.summaryEn || "",
-            summaryHi: data.summaryHi || "",
-            contentEn: data.contentEn || "",
-            contentHi: data.contentHi || "",
-            imageUrl: data.imageUrl || "",
-            category: data.category || "india",
-          });
+  titleEn: data.titleEn || "",
+  titleHi: data.titleHi || "",
+  summaryEn: data.summaryEn || "",
+  summaryHi: data.summaryHi || "",
+  contentEn: data.contentEn || "",
+  contentHi: data.contentHi || "",
+  imageUrl: data.imageUrl || "",
+  category: data.category || "india",
+  isBreaking: data.isBreaking || false,
+  isTrending: data.isTrending || false,
+});
         } else {
           alert("News article not found!");
           router.push("/admin/news");
@@ -223,6 +227,55 @@ export default function EditNewsPage() {
                 <option value="entertainment">Entertainment</option>
                 <option value="health">Health</option>
               </select>
+              <div className="grid md:grid-cols-2 gap-4 mt-4">
+  <label className="flex items-center gap-3 p-4 border rounded-lg cursor-pointer hover:bg-gray-50">
+    <input
+      type="checkbox"
+      checked={form.isBreaking}
+      onChange={(e) =>
+        setForm({
+          ...form,
+          isBreaking: e.target.checked,
+        })
+      }
+      className="w-5 h-5"
+    />
+
+    <div>
+      <p className="font-semibold text-red-600">
+        Breaking News
+      </p>
+
+      <p className="text-sm text-gray-500">
+        Show in breaking news ticker
+      </p>
+    </div>
+  </label>
+
+  <label className="flex items-center gap-3 p-4 border rounded-lg cursor-pointer hover:bg-gray-50">
+    <input
+      type="checkbox"
+      checked={form.isTrending}
+      onChange={(e) =>
+        setForm({
+          ...form,
+          isTrending: e.target.checked,
+        })
+      }
+      className="w-5 h-5"
+    />
+
+    <div>
+      <p className="font-semibold text-blue-600">
+        Trending News
+      </p>
+
+      <p className="text-sm text-gray-500">
+        Show in trending section
+      </p>
+    </div>
+  </label>
+</div>
             </div>
 
             <div className="flex gap-4 pt-4">
