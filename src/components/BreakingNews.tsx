@@ -1,6 +1,19 @@
 import { AlertCircle } from "lucide-react";
+import Link from "next/link";
 
-export default function BreakingNews() {
+type Props = {
+  news: {
+    id: string;
+    titleEn: string;
+    slug: string;
+  }[];
+};
+
+export default function BreakingNews({
+  news,
+}: Props) {
+  if (!news.length) return null;
+
   return (
     <div className="bg-white border-b border-gray-200 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center gap-4">
@@ -8,15 +21,30 @@ export default function BreakingNews() {
           <AlertCircle size={14} />
           Breaking
         </div>
+
         <div className="overflow-hidden relative flex-1">
           <div className="flex gap-12 animate-scroll-left whitespace-nowrap text-gray-700 font-medium text-sm">
-            <span>⚡ India launches new satellite mission successfully</span>
-            <span>⚡ Stock markets hit all-time high today</span>
-            <span>⚡ Major tech conference announced for next month</span>
-            <span>⚡ National sports team wins international tournament</span>
-            {/* Duplicate for seamless loop */}
-            <span>⚡ India launches new satellite mission successfully</span>
-            <span>⚡ Stock markets hit all-time high today</span>
+
+            {news.map((item) => (
+              <Link
+                key={item.id}
+                href={`/news/${item.slug}`}
+                className="hover:text-red-600"
+              >
+                🚨 {item.titleEn}
+              </Link>
+            ))}
+
+            {news.map((item) => (
+              <Link
+                key={`${item.id}-duplicate`}
+                href={`/news/${item.slug}`}
+                className="hover:text-red-600"
+              >
+                🚨 {item.titleEn}
+              </Link>
+            ))}
+
           </div>
         </div>
       </div>

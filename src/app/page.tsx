@@ -30,6 +30,14 @@ export default async function HomePage() {
   const topHeadlines = news.slice(1, 6);
   const latestNews = news.slice(6);
 
+  const breakingNews = news.filter(
+  (item) => item.isBreaking === true
+);
+
+const trendingNews = news.filter(
+  (item) => item.isTrending === true
+);
+
   const categories = ["technology", "sports", "business", "india", "world"];
   const newsByCategory: Record<string, any[]> = {};
   
@@ -40,7 +48,7 @@ export default async function HomePage() {
   return (
     <main className="min-h-screen bg-gray-50">
       <Header />
-      <BreakingNews />
+      <BreakingNews news={breakingNews} />
 
       {heroNews && <HeroNews heroNews={heroNews} topHeadlines={topHeadlines} />}
 
@@ -108,7 +116,7 @@ export default async function HomePage() {
           </div>
 
           <aside className="space-y-8">
-            <TrendingNews news={news.slice(0, 5)} />
+            <TrendingNews news={trendingNews.slice(0, 5)} />
             
             <div className="bg-gradient-to-br from-red-600 to-red-700 rounded-xl p-6 text-white shadow-lg">
               <h3 className="text-xl font-bold mb-2">Daily Newsletter</h3>
