@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description: "Stay updated with the latest breaking news, top headlines, and in-depth analysis from India and around the world on Tokko Bharat.",
 };
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
   const q = query(collection(db, "news"), orderBy("createdAt", "desc"), limit(20));
