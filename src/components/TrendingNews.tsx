@@ -14,7 +14,7 @@ export default function TrendingNews({
   return (
     <div className="bg-white rounded-xl shadow p-5">
       <h3 className="text-2xl font-bold mb-4">
-        Trending News
+        🔥 Trending News
       </h3>
 
       <div className="space-y-4">
