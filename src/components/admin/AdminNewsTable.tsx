@@ -98,6 +98,24 @@ export default function AdminNewsTable({
                         <Eye size={18} />
                       </Link>
 
+                      {item.isBreaking && (
+  <span
+    title="Breaking News"
+    className="text-green-600 font-bold text-lg"
+  >
+    ✔
+  </span>
+)}
+
+{item.isTrending && (
+  <span
+    title="Trending News"
+    className="text-orange-500 font-bold text-lg"
+  >
+    🔥
+  </span>
+)}
+
                       <Link
                         href={`/admin/news/edit/${item.id}`}
                         className="p-2 text-orange-600"
