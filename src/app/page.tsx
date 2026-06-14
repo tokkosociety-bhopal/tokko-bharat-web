@@ -50,7 +50,7 @@ const trendingNews = news.filter(
   return (
     <main className="min-h-screen bg-gray-50">
       <Header />
-      <BreakingNews news={news.slice(0, 3)} />
+      <BreakingNews news={breakingNews} />
 
       {heroNews && <HeroNews heroNews={heroNews} topHeadlines={topHeadlines} />}
 
