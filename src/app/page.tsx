@@ -127,6 +127,7 @@ const trendingNews = news.filter(
   <TrendingNews
     news={trendingNews.slice(0, 5)}
   />
+  
 
   <div className="bg-gradient-to-br from-red-600 to-red-700 rounded-xl p-6 text-white shadow-lg">
     <h3 className="text-xl font-bold mb-2">
@@ -156,3 +157,4 @@ const trendingNews = news.filter(
     </main>
   );
 }
+
